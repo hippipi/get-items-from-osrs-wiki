@@ -28,7 +28,7 @@ def query(request: dict, category: str) -> None:
 		last_continue = result['continue']
 
 # Fetch items from wiki with generator and write to file
-def get_all_items(fname_results: str = 'item_results.txt', category: str = 'Category:Items') -> None:
+def get_all_items(fname_results: str = 'items_results.txt', category: str = 'Category:Items') -> None:
 	# Delete file contents
 	with open(fname_results, 'w') as file:
 		file.write('')
@@ -46,9 +46,9 @@ def get_all_items(fname_results: str = 'item_results.txt', category: str = 'Cate
 
 # Filter items using regex filter from file
 def refine_items(
-	fname_results: str = 'item_results.txt',
-	fname_filters: str = 'filters.txt',
-	fname_filtered_results: str = 'filtered_items.txt'
+	fname_results: str = 'items_results.txt',
+	fname_filters: str = 'items_filters.txt',
+	fname_filtered_results: str = 'items_filtered.txt'
 	) -> None:
 	# Get regex pattern to match against item names
 	patterns = []
